@@ -1,0 +1,13 @@
+pandas
+numpy
+scikit-learn
+imbalanced-learn
+matplotlib
+seaborn
+flask
+flask_sqlalchemy
+flask_login
+cryptography
+gunicorn
+xgboost
+
