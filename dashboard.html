@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Payment Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-shield-alt"></i> Payment Fraud Detection</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/dashboard" class="active">Dashboard</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h2>Fraud Detection Dashboard</h2>
+            <p>View statistics and visualizations of payment fraud data.</p>
+        </section>
+
+        {% if error %}
+        <div class="error-message">
+            <p>{{ error }}</p>
+        </div>
+        {% elif stats %}
+        <section class="stats-container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Transactions</h3>
+                    <p class="stat-value">{{ stats.total_transactions }}</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Fraudulent Transactions</h3>
+                    <p class="stat-value">{{ stats.fraud_count }}</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Fraud Percentage</h3>
+                    <p class="stat-value">{{ stats.fraud_percentage }}%</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Average Transaction</h3>
+                    <p class="stat-value">${{ stats.avg_transaction }}</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="visualizations">
+            <div class="viz-container">
+                <h3>Fraud Distribution</h3>
+                <img src="{{ url_for('static', filename='plots/fraud_distribution.png') }}" alt="Fraud Distribution">
+            </div>
+            
+            <div class="viz-container">
+                <h3>Transaction Amount by Fraud Status</h3>
+                <img src="{{ url_for('static', filename='plots/amount_distribution.png') }}" alt="Amount Distribution">
+            </div>
+            
+            <div class="viz-container">
+                <h3>Transaction Hour by Fraud Status</h3>
+                <img src="{{ url_for('static', filename='plots/hour_distribution.png') }}" alt="Hour Distribution">
+            </div>
+            
+            <div class="viz-container">
+                <h3>Payment Type by Fraud Status</h3>
+                <img src="{{ url_for('static', filename='plots/payment_type_distribution.png') }}" alt="Payment Type Distribution">
+            </div>
+            
+            <div class="viz-container full-width">
+                <h3>Feature Correlation Matrix</h3>
+                <img src="{{ url_for('static', filename='plots/correlation_matrix.png') }}" alt="Correlation Matrix">
+            </div>
+        </section>
+        {% endif %}
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Payment Fraud Detection System</p>
+        </div>
+    </footer>
+</body>
+</html>

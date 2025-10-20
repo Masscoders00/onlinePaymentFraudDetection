@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Payment Fraud Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-shield-alt"></i> Payment Fraud Detection</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/about" class="active">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h2>About This Project</h2>
+            <p>Learn more about the payment fraud detection system and how it works.</p>
+        </section>
+
+        <section class="about-content">
+            <div class="about-section">
+                <h3>Project Overview</h3>
+                <p>This project demonstrates a machine learning approach to detect fraudulent online payment transactions. It uses a combination of transaction characteristics and customer behavior patterns to identify potentially fraudulent activities.</p>
+            </div>
+
+            <div class="about-section">
+                <h3>How It Works</h3>
+                <p>The system uses the following steps to detect fraud:</p>
+                <ol>
+                    <li>Data collection: Transaction details are gathered including amount, time, payment method, and customer information.</li>
+                    <li>Feature engineering: Raw data is transformed into meaningful features that help identify fraud patterns.</li>
+                    <li>Model training: Multiple machine learning algorithms are trained on historical transaction data.</li>
+                    <li>Prediction: The best-performing model evaluates new transactions and assigns a fraud probability score.</li>
+                    <li>Risk assessment: Transactions are categorized as low, medium, or high risk based on their fraud probability.</li>
+                </ol>
+            </div>
+
+            <div class="about-section">
+                <h3>Models Used</h3>
+                <p>This system compares the performance of several machine learning algorithms:</p>
+                <ul>
+                    <li>Logistic Regression: A simple but effective baseline model</li>
+                    <li>Random Forest: An ensemble method that combines multiple decision trees</li>
+                    <li>Gradient Boosting: An advanced ensemble technique that builds trees sequentially</li>
+                </ul>
+                <p>The best-performing model is automatically selected for making predictions.</p>
+            </div>
+
+            <div class="about-section">
+                <h3>Important Features</h3>
+                <p>Some key indicators that help detect fraudulent transactions include:</p>
+                <ul>
+                    <li>Transaction amount: Unusually large transactions may indicate fraud</li>
+                    <li>Time of day: Transactions at unusual hours may be suspicious</li>
+                    <li>Distance from home: Transactions far from a customer's usual location</li>
+                    <li>Customer history: New customers or those with limited history may pose higher risk</li>
+                    <li>Payment method: Certain payment types may be associated with higher fraud rates</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Payment Fraud Detection System</p>
+        </div>
+    </footer>
+</body>
+</html>
